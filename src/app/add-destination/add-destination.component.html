@@ -1,0 +1,6 @@
+<form (ngSubmit)="onSubmit()" #destinationForm="ngForm">
+    <label for="destination">Enter Destination:</label>
+    <input type="text" id="destination" required [(ngModel)]="destination" name="destination">
+    <button type="submit" [disabled]="!destinationForm.form.valid">Add Destination</button>
+  </form>
+  
