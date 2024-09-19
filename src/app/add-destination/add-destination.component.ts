@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DestinationService } from '../destination.service';
 
 @Component({
   selector: 'app-add-destination',
@@ -8,7 +9,11 @@ import { Component } from '@angular/core';
 export class AddDestinationComponent {
   destination: string = '';
 
+  constructor(private destinationService: DestinationService){}
+
   onSubmit(){
+    this.destinationService.addDestination(this.destination);
+    this.destination='';
     console.log(this.destination);
   }
 
