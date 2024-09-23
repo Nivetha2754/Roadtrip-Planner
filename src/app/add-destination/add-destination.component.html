@@ -1,6 +1,20 @@
-<form (ngSubmit)="onSubmit()" #destinationForm="ngForm">
-    <label for="destination">Enter Destination:</label>
-    <input type="text" id="destination" required [(ngModel)]="destination" name="destination">
-    <button type="submit" [disabled]="!destinationForm.form.valid">Add Destination</button>
+<form (ngSubmit)="onSubmit(destinationForm)" #destinationForm="ngForm" class="add-destination-form">
+    <mat-card class="add-destination-card">
+      
+        <span><b>Add a Destination</b></span>
+ 
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Enter Destination</mat-label>
+        <input matInput type="text" required [(ngModel)]="destination" name="destination">
+      </mat-form-field>
+  
+      <button mat-raised-button color="accent" type="submit" [disabled]="!destinationForm.form.valid">
+        Add Destination
+      </button>
+    </mat-card>
   </form>
+  
+  
+  
   

@@ -4,14 +4,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DestinationService {
-  destinations:string[]=[];
+  private destinations: string[] = [];
 
-  addDestination(destination:string){
-    this.destinations.push(destination)
-  }
-  getDestinations(){
+  getDestinations() {
     return this.destinations;
   }
 
-  constructor() { }
+  addDestination(destination: string) {
+    this.destinations.push(destination);
+  }
+
+  updateDestinations(newDestinations: string[]) {
+    this.destinations = newDestinations;
+  }
 }

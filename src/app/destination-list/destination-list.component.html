@@ -1,4 +1,15 @@
-<ul>
-    <li *ngFor="let destination of destinations">{{ destination }}</li>
-  </ul>
+<mat-toolbar color="primary" class="destination-toolbar">
+    <span style = "text-align: center">Destination List</span>
+  </mat-toolbar>
+  
+  <div cdkDropList (cdkDropListDropped)="drop($event)" class="destination-list">
+    <mat-card *ngFor="let destination of destinations" cdkDrag class="destination-card">
+    <mat-card-content style="text-align: center;"> 
+        {{ destination }}
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  
+  
   
